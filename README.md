@@ -1,71 +1,67 @@
-# InstaCart_EDA TripleTen Sprint 2
-# Instacart Customer Data Ordering Trends
+# 📦 InstaCart EDA (TripleTen Sprint 2)
+**Analyzing Instacart Customer Ordering Trends**
 
-## Overview
-This project explores ordering trends from Instacart customer data to provide insights that help optimize stock, enhance customer satisfaction, and understand customer behavior. The analysis uses five datasets containing order, product, aisle, department, and reorder information.
+## 🧠 Project Overview
+This exploratory data analysis (EDA) investigates customer behavior and ordering trends on Instacart. The goal is to uncover actionable insights that can help optimize inventory management, boost customer satisfaction, and better understand purchasing patterns.
 
-## Datasets
-1. **`instacart_orders_df`**: Customer ordering habits, including:
-   - `order_dow`: Day of the week the order was placed.
-   - `days_since_prior_order`: Days since the previous order (with missing values).
-2. **`products_df`**: Product details such as names and associated aisles.
-3. **`aisles_df`**: Information on aisles and their associated products.
-4. **`departments_df`**: Department details and item categorization.
-5. **`order_prod_df`**: Tracks product reorder status and cart placement.
+## 📊 Datasets Used
+1. **`instacart_orders_df`** – Order behavior per user:
+   - `order_dow`: Day of the week (0=Sunday).
+   - `days_since_prior_order`: Days since the previous order (includes missing values).
 
-## Libraries Used
-- **Pandas**: Data manipulation and cleaning.
-- **NumPy**: Scientific computing.
-- **Plotly Express**: Interactive visualizations.
-- **Matplotlib**: Static visualizations.
+2. **`products_df`** – Product names and their aisle assignments.
 
-## Goals
-1. Clean and preprocess the data by:
-   - Removing duplicates.
-   - Handling missing values.
-2. Visualize key trends:
-   - Distribution of orders by time of day and day of the week.
-   - Most frequently ordered and reordered products.
-   - Typical order size and reorder proportions.
-3. Analyze customer behavior to inform Instacart and stores on stocking decisions.
+3. **`aisles_df`** – Aisle IDs and names.
 
-## Data Cleaning Process
+4. **`departments_df`** – Department IDs and item categories.
+
+5. **`order_prod_df`** – Links products to orders, including:
+   - Reorder status.
+   - Position in cart (`add_to_cart_order`).
+
+## 🛠 Libraries Used
+- **Pandas** – Data cleaning & manipulation  
+- **NumPy** – Numeric operations  
+- **Plotly Express** – Interactive plots  
+- **Matplotlib** – Static visualizations  
+
+## 🎯 Goals
+- Clean and structure all datasets.
+- Identify and resolve duplicates and missing values.
+- Visualize:
+  - Order volume by time of day and weekday
+  - Top reordered products
+  - Typical cart size and reorder rates
+
+## 🧹 Data Cleaning Highlights
 ### `instacart_orders_df`
-- Found and removed duplicates (notably many orders on Wednesdays at 2:00 AM).
-- Mapped `order_dow` to weekday names for clarity.
+- Removed duplicate orders (common on Wednesdays at 2 AM).
+- Mapped `order_dow` to weekday names.
 
 ### `products_df`
-- Identified and removed duplicate product names.
-- Fixed misspellings and missing values in product names, particularly in aisle 100.
-- Removed rows labeled "unknown."
+- Fixed typos and removed duplicate/missing names (especially in aisle 100).
+- Dropped rows labeled "unknown."
 
-### `departments_df`
-- Verified no duplicates in department IDs or names.
-
-### `aisles_df`
-- Confirmed no duplicates in aisle data or IDs.
+### `departments_df` & `aisles_df`
+- Verified all department and aisle IDs/names were unique and accurate.
 
 ### `order_prod_df`
-- Checked for duplicates in `order_id` and `product_id` combinations; none found.
-- Retained rows with missing `add_to_cart_order` values for further analysis.
+- Checked for duplicate (order, product) pairs — none found.
+- Retained missing `add_to_cart_order` entries for further analysis.
 
-## Key Insights
-1. **Duplicates**:
-   - Removed duplicates across datasets.
-   - Corrected product name and aisle anomalies.
-2. **Missing Data**:
-   - Addressed missing values in `products_df` and `order_prod_df`.
-3. **Initial Visualizations**:
-   - Histograms and data summaries highlight trends in ordering times, products, and customer preferences.
+## 🔍 Early Insights
+- Cleaned datasets are now consistent and analysis-ready.
+- Time-based order patterns and reorder rates reveal customer loyalty and behavior.
+- Frequent reorders suggest clear stock priorities.
 
-## Next Steps
-- Create detailed histograms and visualizations to illustrate:
-  - Order distributions by time and day.
-  - Frequency of reordered products.
-  - Average order sizes.
-- Use findings to recommend stocking strategies and improve customer satisfaction.
-
-## How to Run
+## 📈 Next Steps
+- Build visualizations to explore:
+  - Order volume by hour and weekday.
+  - Most popular and most reordered products.
+  - Average order size and reorder percentages.
+- Translate patterns into stocking and marketing recommendations.
+  
+## ▶️ How to Run
 1. Clone this repository.
 2. Install required libraries: `pandas`, `numpy`, `plotly`, `matplotlib`.
 3. Place dataset files in the `datasets` directory.
