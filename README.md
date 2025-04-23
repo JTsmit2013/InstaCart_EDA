@@ -1,4 +1,4 @@
-# InstaCart_EDA
+# InstaCart_EDA TripleTen Sprint 2
 # Instacart Customer Data Ordering Trends
 
 ## Overview
