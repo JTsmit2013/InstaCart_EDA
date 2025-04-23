@@ -33,6 +33,16 @@ This exploratory data analysis (EDA) investigates customer behavior and ordering
   - Top reordered products
   - Typical cart size and reorder rates
 
+### Order Volume by Time of Day and Weekday
+![image](https://github.com/user-attachments/assets/9556049a-c1f8-481c-8603-961570b898a1)
+
+*This graph shows how orders are distributed throughout the day.*
+
+### Time Since Last Order
+![image](https://github.com/user-attachments/assets/4cd47251-191c-4e3c-9904-f9ad25ee6fca)
+
+*This shows how ofter customers are ordering,indicating customer loyalty.*
+
 ## 🧹 Data Cleaning Highlights
 ### `instacart_orders_df`
 - Removed duplicate orders (common on Wednesdays at 2 AM).
